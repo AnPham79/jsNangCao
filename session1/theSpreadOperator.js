@@ -27,7 +27,14 @@ const restaurant = {
     orderDelivery: function ({ starterIndex = 1, mainIndex = 0, time = '20:30', address }) {
       console.log(`Vận chuyển ${this.menu[starterIndex].dish} và ${this.menu[mainIndex].dish} 
       đến địa chỉ ${address} vào thời gian ${time}`);
+    },
+
+    orderPizza: function (ing1, ing2, ing3) {
+      console.log(`Nguyên liệu làm Pizza:`);
+      console.log(`Đây là danh sách nguyên liệu làm Pizza 
+      ${ing1}, ${ing2} và ${ing3}`);
     }
+    
   };
 
   restaurant.orderDelivery({
@@ -68,3 +75,16 @@ const restaurant = {
   const letters = [...myName , ' ' , "S."];
   console.log(letters);
   console.log(...myName);
+
+  const incredient = [
+    prompt('nhập nguyên liệu làm Pizza : nguyên liệu 1'),
+    prompt('nguyên liệu 2'),
+    prompt('nguyên liệu 3')
+  ];
+
+  console.log(incredient);
+
+  restaurant.orderPizza(incredient[0], incredient[1], incredient[2]);
+  restaurant.orderPizza(...incredient);
+
+
